@@ -1,0 +1,23 @@
+{
+  "overview": "A vibrant tour and travel showcase website for Radhe Radhe Tour and Travels, featuring curated tour packages, destination highlights, day-by-day itineraries, and easy inquiry forms to help travelers explore and book their dream trips.",
+  "features": [
+    "Hero landing page with brand identity and featured destinations",
+    "Browseable tour packages with filters by destination, duration, and price",
+    "Full tour detail pages with day-by-day itineraries, inclusions, and gallery",
+    "Destination overview pages linking to related tours",
+    "Inquiry and contact forms with validation and feedback",
+    "Mobile-responsive design for all screen sizes"
+  ],
+  "category": "travel-tourism",
+  "tags": [
+    "travel",
+    "tours",
+    "tourism",
+    "packages",
+    "itinerary",
+    "destinations",
+    "inquiry",
+    "showcase"
+  ],
+  "last_updated": "2026-04-23T11:12:58.935Z"
+}

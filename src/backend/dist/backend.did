@@ -1,0 +1,51 @@
+type TourId = nat;
+type Tour = 
+ record {
+   departureDates: vec text;
+   destination: text;
+   destinationId: opt DestinationId;
+   duration: text;
+   exclusions: vec text;
+   galleryImages: vec text;
+   groupSize: text;
+   highlights: vec text;
+   id: TourId;
+   inclusions: vec text;
+   itinerary: vec DayItinerary;
+   name: text;
+   startingPrice: nat;
+ };
+type InquiryRequest = 
+ record {
+   desiredDate: text;
+   email: text;
+   groupSize: nat;
+   message: text;
+   name: text;
+   phone: text;
+   tourName: text;
+ };
+type InquiryId = nat;
+type DestinationId = nat;
+type Destination = 
+ record {
+   highlights: vec text;
+   id: DestinationId;
+   imageUrl: text;
+   name: text;
+   overview: text;
+ };
+type DayItinerary = 
+ record {
+   day: nat;
+   description: text;
+   title: text;
+ };
+service : {
+  getDestination: (id: DestinationId) -> (opt Destination) query;
+  getTour: (id: TourId) -> (opt Tour) query;
+  getToursByDestination: (destination: text) -> (vec Tour) query;
+  listDestinations: () -> (vec Destination) query;
+  listTours: () -> (vec Tour) query;
+  submitInquiry: (req: InquiryRequest) -> (InquiryId);
+}

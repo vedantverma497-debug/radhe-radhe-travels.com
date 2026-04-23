@@ -1,0 +1,69 @@
+// Version: 1.0.0
+type DayItinerary__936181596 = {day : Nat; description : Text; title : Text};
+type DestinationId__1049323589 = Nat;
+type DestinationId__310892426 = DestinationId__1049323589;
+type DestinationId__93069874 = DestinationId__1049323589;
+type Destination__653483194 =
+  {
+    highlights : [Text];
+    id : DestinationId__310892426;
+    imageUrl : Text;
+    name : Text;
+    overview : Text
+  };
+type InquiryId__217425580 = InquiryId__340326671;
+type InquiryId__340326671 = Nat;
+type Inquiry__159127206 =
+  {
+    desiredDate : Text;
+    email : Text;
+    groupSize : Nat;
+    id : InquiryId__217425580;
+    message : Text;
+    name : Text;
+    phone : Text;
+    submittedAt : Timestamp__910780707;
+    tourName : Text
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Timestamp__301639476 = Int;
+type Timestamp__910780707 = Timestamp__301639476;
+type TourId__1021625729 = TourId__987818015;
+type TourId__987818015 = Nat;
+type Tour__156768892 =
+  {
+    departureDates : [Text];
+    destination : Text;
+    destinationId : ?DestinationId__93069874;
+    duration : Text;
+    exclusions : [Text];
+    galleryImages : [Text];
+    groupSize : Text;
+    highlights : [Text];
+    id : TourId__1021625729;
+    inclusions : [Text];
+    itinerary : [DayItinerary__936181596];
+    name : Text;
+    startingPrice : Nat
+  };
+actor {
+  stable destinations :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Destination__653483194]];
+      var elementIndex : Nat__490723111
+    };
+  stable inquiries :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Inquiry__159127206]];
+      var elementIndex : Nat__490723111
+    };
+  stable tours :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Tour__156768892]];
+      var elementIndex : Nat__490723111
+    }
+};
